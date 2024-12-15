@@ -1,0 +1,232 @@
+/* הסטייל הכללי של ה-header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #a89b6d; /* צבע רקע תואם ללוגו */
+    padding: 10px 20px;
+    position: relative;
+}
+
+/* תמונה בלוגו */
+header img {
+    flex-shrink: 0; /* תמנע מהתמונה לקטן */
+}
+
+/* שורת החיפוש */
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin: 0 auto; /* מרכז את ה-search bar בתוך ה-header */
+    max-width: 500px;
+    width: 100%;
+}
+
+.search-bar input {
+    padding: 10px;
+    font-size: 1em;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    margin-left: 5px;
+    font-size: 1em;
+    background-color: #5a5a5a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #3a3a3a;
+}
+
+/* תפריט המועדפים */
+.favorites {
+    position: relative;
+}
+
+.favorites_button {
+    background: none;
+    border: none;
+    font-size: 4em; /* מגדיל את גודל הלב */
+    color: #f40707; /* צבע אדום נעים */
+    cursor: pointer;
+    transition: transform 0.2s, color 0.2s; /* אנימציה חלקה */
+}
+
+.favorites_dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 200px;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.favorites_button:hover {
+    color: #ff1a1a; /* משנה צבע באפקט ריחוף */
+    transform: scale(1.2); /* מגדיל את הלב מעט בריחוף */
+}
+
+.favorites_button:active {
+    transform: scale(1.1); /* מקטין מעט את הגודל בלחיצה */
+}
+
+.favorites:hover .favorites_dropdown {
+    display: block;
+}
+
+/* הגדרת Layout */
+.User_screen {
+    display: flex;
+    justify-content: space-between;  /* מפריד בין שלושת העמודים */
+    padding: 20px;
+    gap: 20px;
+}
+
+/* העיצוב של צד שמאל - רשימת המתכונים */
+.list_of_recipes {
+    flex: 1;  /* תופס מקום של 1/3 מתוך הרוחב */
+    max-width: 300px; /* הגבלת רוחב */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+}
+
+.recipe-item {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.recipe-item:hover {
+    background-color: #f1f1f1;
+}
+
+.recipe-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.recipe-title {
+    font-size: 1.1em;
+    text-align: center;
+    padding: 10px;
+    background-color: #fafafa;
+}
+
+/* העיצוב של מרכז - תצוגת המתכון המלא */
+.recipe_display {
+    flex: 2;  /* תופס מקום של 2/3 מתוך הרוחב */
+    background-color: #ffffff;
+    padding: 20px;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+.recipe_display img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.recipe_display h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+.recipe_display p {
+    font-size: 1.1em;
+    margin-top: 10px;
+}
+
+/* כפתורים פלוס ומינוס */
+.adjust-servings {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.adjust-servings button {
+    padding: 10px 15px;
+    font-size: 1.5em;
+    margin: 0 10px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.adjust-servings button:hover {
+    background-color: #f1f1f1;
+}
+
+/* עיצוב רשימת המרכיבים */
+.ingredients ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.ingredients li {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+/* כפתור הוספה למועדפים */
+#favoriteButton {
+    padding: 10px 20px;
+    background-color: #f40707;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#favoriteButton:hover {
+    background-color: #ff1a1a;
+}
+
+/* עיצוב צד ימין - רשימת קניות (ממתין לעבודה עליה) */
+.shopping_list {
+    flex: 1;  /* תופס מקום של 1/3 מתוך הרוחב */
+    max-width: 300px; /* הגבלת רוחב */
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    overflow-y: auto;
+}
+
+.shopping_list h3 {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.shopping_list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.shopping_list li {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
