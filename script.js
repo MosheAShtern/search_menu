@@ -35,6 +35,8 @@ async function fetchRecipeDetails(recipeId) {
             throw new Error('Failed to fetch recipe details');
         }
         const data = await response.json();
+        console.log(data);
+        
         return data;
     } catch (error) {
         console.error('Error fetching recipe details:', error);
