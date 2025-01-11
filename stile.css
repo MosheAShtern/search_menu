@@ -3,21 +3,21 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #a89b6d; /* צבע רקע תואם ללוגו */
+    background-color: #a89b6d;
     padding: 10px 20px;
     position: relative;
 }
 
 /* תמונה בלוגו */
 header img {
-    flex-shrink: 0; /* תמנע מהתמונה לקטן */
+    flex-shrink: 0;
 }
 
 /* שורת החיפוש */
 .search-bar {
     display: flex;
     align-items: center;
-    margin: 0 auto; /* מרכז את ה-search bar בתוך ה-header */
+    margin: 0 auto;
     max-width: 500px;
     width: 100%;
 }
@@ -53,10 +53,10 @@ header img {
 .favorites_button {
     background: none;
     border: none;
-    font-size: 4em; /* מגדיל את גודל הלב */
-    color: #f40707; /* צבע אדום נעים */
+    font-size: 4em;
+    color: #f40707;
     cursor: pointer;
-    transition: transform 0.2s, color 0.2s; /* אנימציה חלקה */
+    transition: transform 0.2s, color 0.2s;
 }
 
 .favorites_dropdown {
@@ -74,12 +74,12 @@ header img {
 }
 
 .favorites_button:hover {
-    color: #ff1a1a; /* משנה צבע באפקט ריחוף */
-    transform: scale(1.2); /* מגדיל את הלב מעט בריחוף */
+    color: #ff1a1a;
+    transform: scale(1.2);
 }
 
 .favorites_button:active {
-    transform: scale(1.1); /* מקטין מעט את הגודל בלחיצה */
+    transform: scale(1.1);
 }
 
 .favorites:hover .favorites_dropdown {
@@ -89,15 +89,15 @@ header img {
 /* הגדרת Layout */
 .User_screen {
     display: flex;
-    justify-content: space-between;  /* מפריד בין שלושת העמודים */
+    justify-content: space-between;
     padding: 20px;
     gap: 20px;
 }
 
 /* העיצוב של צד שמאל - רשימת המתכונים */
 .list_of_recipes {
-    flex: 1;  /* תופס מקום של 1/3 מתוך הרוחב */
-    max-width: 300px; /* הגבלת רוחב */
+    flex: 1;
+    max-width: 300px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -131,7 +131,7 @@ header img {
 
 /* העיצוב של מרכז - תצוגת המתכון המלא */
 .recipe_display {
-    flex: 2;  /* תופס מקום של 2/3 מתוך הרוחב */
+    flex: 2;
     background-color: #ffffff;
     padding: 20px;
     max-width: 800px;
@@ -182,17 +182,19 @@ header img {
 .ingredients ul {
     list-style-type: none;
     padding: 0;
+    margin-top: 10px;
 }
 
 .ingredients li {
     font-size: 1.1em;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+    direction: rtl;
 }
 
 /* כפתור הוספה למועדפים */
 #favoriteButton {
     padding: 10px 20px;
-    background-color: #f40707;
+    background-color: #a89b6d;
     color: white;
     border: none;
     border-radius: 5px;
@@ -202,13 +204,13 @@ header img {
 }
 
 #favoriteButton:hover {
-    background-color: #ff1a1a;
+    background-color: #8f7e55;
 }
 
-/* עיצוב צד ימין - רשימת קניות (ממתין לעבודה עליה) */
+/* עיצוב צד ימין - רשימת קניות */
 .shopping_list {
-    flex: 1;  /* תופס מקום של 1/3 מתוך הרוחב */
-    max-width: 300px; /* הגבלת רוחב */
+    flex: 1;
+    max-width: 300px;
     background-color: #f8f8f8;
     padding: 20px;
     border-radius: 8px;
@@ -229,4 +231,462 @@ header img {
 .shopping_list li {
     font-size: 1.1em;
     margin-bottom: 10px;
+}
+
+.favorite-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.favorite-item img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.favorite-item h3 {
+    font-size: 16px;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* סגנונות חדשים להוספת רכיבים */
+.ingredient-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+    direction: rtl;
+}
+
+.amount-input {
+    width: 70px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.unit-select {
+    width: 80px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.name-input {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.delete-ingredient {
+    background: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.delete-ingredient:hover {
+    background: #ff0000;
+}
+
+.add-ingredient-btn {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.add-ingredient-btn:hover {
+    background: #45a049;
+}
+
+
+.watch-recipe-button {
+    display: block;
+    margin: 20px auto; /* מרכז את הכפתור */
+    padding: 12px 20px; /* ריווח פנימי */
+    font-size: 16px; /* גודל טקסט */
+    font-weight: bold;
+    background-color: #ff6f61; /* צבע רקע */
+    color: white; /* צבע טקסט */
+    border: none; /* ללא גבול */
+    border-radius: 8px; /* פינות מעוגלות */
+    cursor: pointer; /* סמן של לחיצה */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* אפקטים */
+}
+
+.watch-recipe-button:hover {
+    background-color: #e65a50; /* צבע רקע כהה יותר בהובר */
+    transform: scale(1.05); /* הגדלה קלה בהובר */
+}
+
+.watch-recipe-button:active {
+    background-color: #cc4e45; /* צבע רקע כהה יותר בלחיצה */
+    transform: scale(1); /* איפוס הגדלה */
+}
+/* עיצוב כלל הרשימה */
+.shopping-list-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.shopping-list-container h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #333;
+}
+
+.shopping-list-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.shopping-list-container li {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+/* עיצוב טקסט הרכיב */
+.shopping-list-container li span {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+/* קבוצה של כפתורים */
+.shopping-list-container .button-group {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+/* כפתור להגדלה */
+.add-item {
+    background-color: #28a745;
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.add-item:hover {
+    background-color: #218838;
+}
+
+/* כפתור להקטנה */
+.subtract-item {
+    background-color: #ffc107;
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.subtract-item:hover {
+    background-color: #e0a800;
+}
+
+/* כפתור למחיקה */
+.delete-item {
+    background-color: #dc3545;
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.delete-item:hover {
+    background-color: #dc3545;
+}
+
+/* כפתור להוספה לרשימת קניות */
+#addToShoppingListButton {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #a89b6d;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#addToShoppingListButton:hover {
+    background-color: #8f7e55;
+    transform: scale(1.05);
+}
+
+#addToShoppingListButton:active {
+    background-color: #8f7e55;
+}
+
+/* כפתור לניקוי רשימה */
+#clearShoppingList {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #6c757d;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#clearShoppingList:hover {
+    background-color: #5a6268;
+}
+
+
+/* העיצוב של כפתורים במרכז העמוד */
+.recipe_display button {
+    display: inline-block; /* הכפתורים יישבו זה לצד זה */
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #a89b6d; /* צבע תואם ל-header */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.recipe_display button:hover {
+    background-color: #8f7e55; /* צבע כהה יותר להובר */
+    transform: scale(1.05); /* הגדלה קלה */
+}
+
+.recipe_display button:active {
+    background-color: #7b6a4a; /* צבע כהה יותר ללחיצה */
+    transform: scale(1); /* איפוס הגדלה */
+}
+
+
+.button-group-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* רווחים בין הכפתורים */
+    margin-top: 20px;
+}
+
+.button-group-center button {
+    flex: 1; /* כל הכפתורים באותו רוחב */
+    max-width: 200px; /* רוחב מקסימלי */
+    height: 50px; /* גובה אחיד */
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #a89b6d; /* צבע תואם ל-header */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button-group-center button:hover {
+    background-color: #8f7e55;
+    transform: translateY(-3px); /* אפקט הרמה */
+}
+
+.button-group-center button:active {
+    background-color: #7b6a4a;
+    transform: translateY(0); /* איפוס אפקט */
+}
+.favorites_dropdown {
+    display: none; /* הופך ל-`block` בעת hover */
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 250px;
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.favorites_dropdown .favorite-item {
+    display: flex;
+    justify-content: space-between; /* מבטיח שהכרטיס והכפתור יישבו בשורה */
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s ease;
+    overflow: hidden; /* מוודא ששום תוכן לא יגלוש */
+    box-sizing: border-box;
+}
+
+.favorites_dropdown .favorite-item:hover {
+    background-color: #f9f9f9;
+}
+
+.favorites_dropdown .favorite-card {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* רווח בין התמונה לטקסט */
+    flex-grow: 1; /* הכרטיס ימלא את המקום שנותר */
+    overflow: hidden; /* מבטיח שלא יגלוש */
+}
+
+.favorites_dropdown .favorite-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+    flex-shrink: 0; /* מבטיח שהתמונה לא תקטן */
+}
+
+.favorites_dropdown .favorite-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis; /* מוסיף "..." אם הטקסט ארוך מדי */
+    white-space: nowrap;
+    flex-grow: 1; /* מאפשר לכותרת להשתמש במקום הפנוי */
+}
+
+.favorites_dropdown .delete-favorite {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    flex-shrink: 0; /* מבטיח שהכפתור לא ישנה גודל */
+    transition: background-color 0.3s ease;
+    align-self: flex-start; /* ממקם את הכפתור בצד ימין למעלה */
+}
+
+.favorites_dropdown .delete-favorite:hover {
+    background-color: #c82333;
+}
+
+#clearFavoritesButton {
+    display: block;
+    width: 100%; /* כפתור מלא לרוחב הרשימה */
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #6c757d;
+    color: white;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#clearFavoritesButton:hover {
+    background-color: #5a6268;
+}
+#clearFavoritesButton {
+    display: block;
+    width: 100%; /* כפתור מלא לרוחב הרשימה */
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #6c757d;
+    color: white;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#clearFavoritesButton:hover {
+    background-color: #5a6268;
+}
+.User_screen {
+    display: flex; /* פריסה אופקית של העמודות */
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+    height: calc(100vh - 60px); /* גובה המסך המלא פחות גובה ה-header */
+    overflow: hidden; /* מבטל גלילה גלובלית של כל הדף */
+}
+
+/* עיצוב צד שמאל - רשימת המתכונים */
+.list_of_recipes {
+    flex: 1; /* כל עמודה תקבל גודל יחסי */
+    max-width: 300px; /* רוחב מקסימלי */
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow-y: auto; /* מאפשר גלילה אנכית בתוך העמודה */
+    padding: 10px;
+    height: 100%; /* גובה מלא של העמודה */
+}
+
+/* העיצוב של מרכז - תצוגת המתכון המלא */
+.recipe_display {
+    flex: 2; /* העמודה המרכזית תקבל יותר מקום */
+    max-width: 800px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* מאפשר גלילה אנכית בתוך העמודה */
+    height: 100%; /* גובה מלא של העמודה */
+}
+
+/* עיצוב צד ימין - רשימת קניות */
+.shopping_list {
+    flex: 1; /* כל עמודה תקבל גודל יחסי */
+    max-width: 300px;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    overflow-y: auto; /* מאפשר גלילה אנכית בתוך העמודה */
+    height: 100%; /* גובה מלא של העמודה */
 }
