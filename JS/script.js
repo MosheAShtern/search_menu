@@ -333,7 +333,7 @@ function renderShoppingList() {
         addButton.textContent = '+';
         addButton.classList.add('add-item');
         addButton.addEventListener('click', () => {
-            item.amount += 1; // מגדיל את הכמות ב-1
+            item.amount += 0.25; // מגדיל את הכמות ב-0.25
             renderShoppingList();
         });
 
@@ -343,7 +343,7 @@ function renderShoppingList() {
         subtractButton.classList.add('subtract-item');
         subtractButton.addEventListener('click', () => {
             if (item.amount > 1) { // הכמות לא יכולה לרדת מתחת ל-1
-                item.amount -= 1;
+                item.amount -= 0.25;
                 renderShoppingList();
             }
         });
