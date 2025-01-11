@@ -12,7 +12,6 @@ let originalServings = null; // מספר המנות המקורי למתכון ה
 let shoppingList = []; // רשימת הקניות הכללית
 
 
-
 // פונקציה להצגת מתכונים בעמוד השמאלי
 function displayRecipes(recipes) {
     listOfRecipes.innerHTML = '';
@@ -57,7 +56,6 @@ function displayRecipes(recipes) {
         listOfRecipes.appendChild(recipeCard);
     });
 }
-
 
 
 function displayRecipeDetails(recipe) {
@@ -146,7 +144,7 @@ function displayRecipeDetails(recipe) {
     recipeDisplay.appendChild(servings);
     recipeDisplay.appendChild(adjustServings);
     recipeDisplay.appendChild(ingredientsDiv);
-    recipeDisplay.appendChild(buttonGroup); // הוספת ה-DIV של הכפתורים לתצוגה
+    recipeDisplay.appendChild(buttonGroup); 
 
     // מאזינים
     buttonMinus.addEventListener('click', () => {
@@ -165,11 +163,6 @@ function displayRecipeDetails(recipe) {
 
     favoriteButton.addEventListener('click', () => addToFavorites(recipe));
 }
-
-
-
-
-
 
 function updateServings(change) {
     if (currentRecipe) {
@@ -390,11 +383,6 @@ function renderShoppingList() {
 
     shoppingListContainer.appendChild(clearButton);
 }
-
-
-
-
-
 
 function clearShoppingList() {
     shoppingList = [];
